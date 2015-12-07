@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 # (c) 2015, Darren Worrall <darren@iweb.co.uk>
@@ -647,7 +647,7 @@ def main():
 
         result = acs_ip_address.get_result(ip_address)
 
-    except CloudStackException, e:
+    except CloudStackException as e:
         module.fail_json(msg='CloudStackException: %s' % str(e))
 
     module.exit_json(**result)

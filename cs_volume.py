@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 # (c) 2015, Jefferson Girão <jefferson@girao.net>
@@ -879,7 +879,7 @@ def main():
 
         result = acs_vol.get_result(volume)
 
-    except CloudStackException, e:
+    except CloudStackException as e:
         module.fail_json(msg='CloudStackException: %s' % str(e))
 
     module.exit_json(**result)
